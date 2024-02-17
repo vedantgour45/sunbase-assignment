@@ -1,0 +1,328 @@
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #212529;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: #cad2c5; */
+    background:
+        #cad2c5 linear-gradient(147deg, #cad2c5 0%, #bcd4e6 74%) no-repeat fixed center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    /* background-color: #84a98c; */
+    background:
+        #cad2c5 linear-gradient(160deg, #cad2c5 0%, #99c1de 74%) no-repeat fixed center;
+    border-bottom: 1px solid #2f3e46;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header #saveBtn {
+    background-color: #2f3e46;
+    color: #cad2c5;
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: letter-spacing 0.5s ease;
+}
+
+header #saveBtn:hover {
+    letter-spacing: 3px;
+    background-color: #354f52;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+#formControls {
+    height: 100vh;
+    padding-inline: 20px;
+}
+
+#formControls h2 {
+    margin-top: 7px;
+}
+
+.buttonGroup {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.button {
+    --main-focus: #2d8cf0;
+    --font-color: #323232;
+    --bg-color-sub: #dedede;
+    --bg-color: #eee;
+    --main-color: #323232;
+    position: relative;
+    width: 160px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.button,
+.button__icon,
+.button__text {
+    transition: all 0.3s;
+}
+
+.button .button__text {
+    transform: translateX(10px);
+    color: var(--font-color);
+    font-weight: 600;
+}
+
+.button .button__icon {
+    position: absolute;
+    left: 16px;
+    transform: translateX(100px);
+    height: 100%;
+    width: 39px;
+    background-color: var(--bg-color-sub);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button .svg {
+    width: 20px;
+    fill: var(--main-color);
+}
+
+.button:hover {
+    background: var(--bg-color);
+}
+
+.button:hover .button__text {
+    color: transparent;
+}
+
+.button:hover .button__icon {
+    width: 170px;
+    transform: translateX(-15px);
+}
+
+.button:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px var(--main-color);
+}
+
+#formPreview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 1px solid #2f3e46;
+    padding-inline: 20px;
+    flex-grow: 2;
+    /* background-color: #e0e1dd; */
+    background:
+        #e0e1dd linear-gradient(160deg, #e0e1dd 0%, #bcd4e6 74%) no-repeat fixed center;
+}
+
+
+form {
+    min-width: 50%;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    /* background-color: #f8f9fa; */
+    background:
+        #f8f9fa linear-gradient(147deg, #f8f9fa 0%, #fffcf2 74%) no-repeat fixed center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border: .5px solid #2f3e46;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+form div>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 5px;
+}
+
+
+/* .delete-btn {
+    background-color: transparent;
+    width: fit-content;
+    color: #ef233c;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+} */
+
+.delete-btn {
+    --main-focus: #2d8cf0;
+    --font-color: #323232;
+    --bg-color-sub: #dedede;
+    --bg-color: #eee;
+    --main-color: #323232;
+    position: relative;
+    /* width: 25px; */
+    padding-inline: 4px;
+    height: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--main-color);
+    box-shadow: 1px 1px var(--main-color);
+    background-color: var(--bg-color);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.delete-btn,
+.button__icon,
+.button__text {
+    transition: all 0.3s;
+}
+
+.delete-btn .button__text {
+    transform: translateX(0);
+    transform: translateY(2px);
+    color: var(--font-color);
+    font-weight: 600;
+}
+
+.delete-btn .button__icon {
+    position: absolute;
+    transform: translateX(109px);
+    height: 100%;
+    width: 39px;
+    background-color: var(--bg-color-sub);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-btn .svg {
+    width: 14px;
+    fill: var(--main-color);
+}
+
+.delete-btn:hover {
+    background: var(--bg-color);
+}
+
+.delete-btn:hover .button__text {
+    color: transparent;
+}
+
+.delete-btn:hover .button__icon {
+    width: 148px;
+    transform: translateX(0);
+}
+
+.delete-btn:active {
+    transform: translate(1.5px, 1.5px);
+    box-shadow: 0px 0px var(--main-color);
+}
+
+label {
+    color: #2f3e46;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+textarea {
+    min-height: 50px;
+}
+
+.parent-container {
+    cursor: pointer;
+}
+
+input,
+select,
+textarea {
+    background-color: transparent;
+    border: none;
+    border: 1px solid #52796f;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+    color: #212529;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.parent-container.drag-over {
+    border: 2px dashed #aaa;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.delete-btn {
+    float: right;
+}
+
+@media only screen and (max-width: 769px) {
+    .container {
+        gap: 0;
+        flex-direction: column;
+    }
+
+    #formControls {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        padding-inline: 20px;
+        padding-bottom: 20px;
+        border-right: none;
+        border-bottom: 1px solid #2f3e46;
+    }
+
+    .buttonGroup {
+        flex-direction: row;
+        gap: 15px;
+        justify-content: left;
+    }
+}
+
+@media only screen and (max-width: 553px) {
+    .button {
+        width: 100%;
+        text-align: center;
+        padding-inline: 5px;
+    }
+
+    .button .button__icon {
+        display: none;
+    }
+}

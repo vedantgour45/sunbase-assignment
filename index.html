@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Form Designer</title>
+</head>
+
+<body>
+    <header>
+        <h1>Form Designer</h1>
+        <button id="saveBtn">Save</button>
+    </header>
+    <div class="container">
+        <section id="formControls">
+            <h2>Components</h2>
+            <div class="buttonGroup">
+                <button class="button" type="button" onclick="addElement('input')">
+                    <span class="button__text">Add Input</span>
+                    <span class="button__icon"><svg class="svg" fill="none" height="24" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                            width="24" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="12" x2="12" y1="5" y2="19"></line>
+                            <line x1="5" x2="19" y1="12" y2="12"></line>
+                        </svg></span>
+                </button>
+                <button class="button" type="button" onclick="addElement('select')"">
+                    <span class=" button__text">Add Select</span>
+                    <span class="button__icon"><svg class="svg" fill="none" height="24" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                            width="24" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="12" x2="12" y1="5" y2="19"></line>
+                            <line x1="5" x2="19" y1="12" y2="12"></line>
+                        </svg></span>
+                </button>
+                <button class="button" type="button" onclick="addElement('textarea')">
+                    <span class="button__text">Add Textarea</span>
+                    <span class="button__icon"><svg class="svg" fill="none" height="24" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                            width="24" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="12" x2="12" y1="5" y2="19"></line>
+                            <line x1="5" x2="19" y1="12" y2="12"></line>
+                        </svg></span>
+                </button>
+                <!-- <button onclick="addElement('input')">Add Input</button>
+                <button onclick="addElement('select')">Add Select</button>
+                <button onclick="addElement('textarea')">Add Textarea</button> -->
+            </div>
+
+        </section>
+        <section id="formPreview">
+            <h2>Form Preview</h2>
+            <form id="renderedForm">
+                <div class="parent-container" draggable="true">
+                    <div><label>Sample Label</label><button class="delete-btn">✕</button></div>
+                    <input type="text" placeholder="Sample placeholder">
+                </div>
+                <div class="parent-container" draggable="true">
+                    <div><label>Sample Label</label><button class="delete-btn">✕</button></div>
+                    <select>
+                        <option>Sample Option</option>
+                        <option>Sample Option</option>
+                        <option>Sample Option</option>
+                    </select>
+                </div>
+                <div class="parent-container" draggable="true">
+                    <div><label>Sample Label</label><button class="delete-btn">✕</button></div>
+                    <input type="text" placeholder="Sample Placeholder">
+                </div>
+                <div class="parent-container" draggable="true">
+                    <div><label>Sample Label</label><button class="delete-btn">✕</button></div>
+                    <textarea placeholder="Sample Placeholder"></textarea>
+                </div>
+            </form>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
