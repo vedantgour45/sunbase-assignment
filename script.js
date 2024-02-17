@@ -32,7 +32,7 @@ const formData = [
 ];
 
 // Render initial form
-// renderForm();
+renderForm();
 
 // Function to render form based on JSON data
 function renderForm() {
@@ -297,6 +297,24 @@ function handleDrop(element, e) {
     } else {
       parent.insertBefore(dragSrcElement, element);
     }
+
+    // Update the formData array to reflect the new order
+    const idDragSrc = dragSrcElement.id;
+    const idElement = element.id;
+
+    const indexDragSrcFormData = formData.findIndex(
+      (item) => item.id === idDragSrc
+    );
+    const indexElementFormData = formData.findIndex(
+      (item) => item.id === idElement
+    );
+
+    const temp = formData[indexDragSrcFormData];
+    formData[indexDragSrcFormData] = formData[indexElementFormData];
+    formData[indexElementFormData] = temp;
+
+    // Log the updated JSON data
+    console.log(JSON.stringify(formData, null, 2));
   }
 
   // Remove drag-over class after drop
@@ -310,6 +328,9 @@ function handleDragEnd() {
   containers.forEach(function (container) {
     container.classList.remove("drag-over");
   });
+
+  // Log the updated JSON data after the drag operation is complete
+  console.log(JSON.stringify(formData, null, 2));
 }
 
 const containers = document.querySelectorAll(".parent-container");
