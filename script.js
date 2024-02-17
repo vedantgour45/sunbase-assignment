@@ -95,22 +95,6 @@ function renderForm() {
 }
 
 // Function to add form element
-// function addElement(type) {
-//   const newItem = {
-//     id: generateId(),
-//     type: type,
-//     label: "Sample Label",
-//     placeholder: "Sample Placeholder",
-//     options:
-//       type === "select"
-//         ? ["Sample Option 1", "Sample Option 2", "Sample Option 3"]
-//         : undefined,
-//   };
-//   formData.push(newItem);
-//   renderForm();
-// }
-
-// Function to add form element
 function addElement(type) {
   const newItem = {
     id: generateId(),
@@ -154,9 +138,9 @@ function createFormElement(item) {
   }
   element.id = item.id;
 
-  const container = document.createElement("div"); // Create container div
+  const container = document.createElement("div");
   const label = document.createElement("label");
-  label.textContent = item.label; // item.type
+  label.textContent = item.label;
 
   const parentContainer = document.createElement("div");
   parentContainer.classList.add("parent-container");
@@ -181,8 +165,8 @@ function createFormElement(item) {
     deleteElement(item.id);
   });
 
-  container.appendChild(label); // Append label to container
-  container.appendChild(deleteBtn); // Append delete button to container
+  container.appendChild(label);
+  container.appendChild(deleteBtn);
   parentContainer.appendChild(container);
   parentContainer.appendChild(element);
 
@@ -248,13 +232,12 @@ saveBtn.addEventListener("click", () => {
   console.log(JSON.stringify(formData, null, 2));
 });
 
-// const form = document.getElementById("renderedForm");
 let dragSrcElement = null;
 
 function handleDragStart(element, e) {
   dragSrcElement = element;
   e.dataTransfer.effectAllowed = "move";
-  e.dataTransfer.setData("text/plain", null); // Firefox requires this line
+  e.dataTransfer.setData("text/plain", null);
 
   // Prevent text selection
   if (e.stopPropagation) {
@@ -265,7 +248,7 @@ function handleDragStart(element, e) {
 
 function handleDragOver(element, e) {
   if (e.preventDefault) {
-    e.preventDefault(); // Necessary to allow drop
+    e.preventDefault();
   }
 
   element.classList.add("drag-over");
